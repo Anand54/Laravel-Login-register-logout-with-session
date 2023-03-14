@@ -1,0 +1,10 @@
+To create a new project: composer create-project laravel/laravel project_name
+To run project in web: php artisan serve
+TO make Controller:php artisan make:controller UserController
+TO make model:php artisan make:model Usermodel
+To create model and migration file:php artisan make:model userModel -m
+Note: -m create migration file
+
+To migrate table: php artisan migrate
+To make middleware:php artisan make:middleware file_name(like autchCheck)
+note:middleware helps to remove session error direct do to dashboard

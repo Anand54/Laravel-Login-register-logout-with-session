@@ -1,4 +1,8 @@
 <!--
+Check weather php and compser is install or not
+ i) php --version
+ ii) composer
+
 1) To create a new project:
     composer create-project laravel/laravel project_name or laravel new project_name
 
@@ -13,6 +17,7 @@
 2) To run project in web: php artisan serve
 
 3) TO make Controller:php artisan make:controller UserController
+
 4) TO make model:php artisan make:model Usermodel
 5) To create model and migration file:php artisan make:model userModel -m
    Note: -m create migration file
@@ -25,6 +30,10 @@
       2) TO undo the migration tableuse: 1) php artisan migrate:rollback
                                          2) php artisan migrate:rollback --step=3
 
+      Note: 
+           $table->string('email')->unique(); string('email') bring varchar(255)
+            $table->string('email')->default(null); is the way to make this column null by default.
+         
 8) Assets must be in public directory i.e: images or css or js or favicon and etc
    1) To print we use {{}}
    2) To load css,favicon,js i.e: {{assets('favicon.ico or css/style.css or js/script.js')}}
@@ -34,6 +43,42 @@
    1)For staticpage route
      i)Route::get('/home', view : 'home')->name('Home'));
    2) For
+
+
+10) for validation
+     'image'=>sometime|jpg,png,gif,jpeg
+
+11) To upload image
+
+    In controller : use Illuminate\Support\Facades\File;
+
+    if($request->image){
+      $imageExtension=$request->image->getClientOriginalExtension();
+      $file =time().'.'$imageExtension;
+      $request->image->move(public_path().'/images/upload/', $file);
+
+      $image->image=$file;
+      $image->save();
+    }
+
+12) to use pagination
+      i) Go to App\Provider\AppServiceProvider
+      ii) include this in AppServiceProvider: 
+            use Illuminate\Pagination\Paginator;
+      iii) In function boot() {
+         Paginator::useBootstrapFive();
+      }
+
+13) Actions Handled By the Controller
+HTTP Verb   	Path (URL)     	   Action (Method)	         Route Name
+GET	         /photo	               index	                  photo.index
+GET	         /photo/create	         create	               photo.create
+POST         	/photo	               store	                  photo.store
+GET	         /photo/{photo}	         show	                  photo.show
+GET	         /photo/{photo}/edit	   edit	                  photo.edit
+PUT/PATCH	   /photo/{photo}	         update	               photo.update
+DELETE	      /photo/{photo}	         destroy	               photo.destroy
+
 10) To make middleware:php artisan make:middleware file_name(like autchCheck)
    note:middleware helps to remove session error direct do to dashboard
 

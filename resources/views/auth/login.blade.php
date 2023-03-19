@@ -24,7 +24,7 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password :</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="{{old('password')}}">
-                 <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                <span class="text-danger">@error('password') {{$message}} @enderror</span>
             </div>
             <div class="text-center">
             <button type="submit" class="btn btn-primary mb-3" name="save">Submit</button>

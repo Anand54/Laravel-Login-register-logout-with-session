@@ -27,23 +27,25 @@ Check weather php and compser is install or not
 7) To migrate table: php artisan migrate
    Note:
       1) TO delete or remove all migrated table use: migrate:reset
-      2) TO undo the migration tableuse: 1) php artisan migrate:rollback
+      2) TO undo the migration table use: 1) php artisan migrate:rollback
                                          2) php artisan migrate:rollback --step=3
 
       Note: 
            $table->string('email')->unique(); string('email') bring varchar(255)
-            $table->string('email')->default(null); is the way to make this column null by default.
+           $table->string('email')->default(null); is the way to make this column null by default.
          
 8) Assets must be in public directory i.e: images or css or js or favicon and etc
    1) To print we use {{}}
    2) To load css,favicon,js i.e: {{assets('favicon.ico or css/style.css or js/script.js')}}
    3) To navigate in <a> tags we use href="{{url('home')}}".
+   4)dd($request->all()); is used to print data as a json format
 
 9) We navigate all the file,controller and model from routes\web.php.
    1)For staticpage route
      i)Route::get('/home', view : 'home')->name('Home'));
-   2) For
-
+   2) For dynamin or functional foutr through controller
+     i) Route::get ('/register',[UserController::class,'register']);
+     ii) Route::post ('/register-user',[UserController::class,'registerUser'])->name('register-user');
 
 10) for validation
      'image'=>sometime|jpg,png,gif,jpeg

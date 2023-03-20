@@ -46,7 +46,7 @@ Check weather php and compser is install or not
    2) For dynamin or functional foutr through controller
      i) Route::get ('/register',[UserController::class,'register']);
      ii) Route::post ('/register-user',[UserController::class,'registerUser'])->name('register-user');
-
+g
 10) for validation
      'image'=>sometime|jpg,png,gif,jpeg
 

@@ -83,5 +83,17 @@ DELETE	      /photo/{photo}	         destroy	               photo.destroy
 
 10) To make middleware:php artisan make:middleware file_name(like autchCheck)
    note:middleware helps to remove session error direct do to dashboard
+  
+
+When you are cloning a Laravel project from GitHub, you have to :
+   i) Run composer install on your cmd or terminal
+   ii) Copy .env.example file to .env on the root folder
+   iii) Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration
+   iv) Run php artisan key:generate
+   v) Run php artisan migrate
+   vi) Run php artisan serve
+   vii) Go to http://localhost:8000/
+   and also run
+   php artisan optimize
 
 -->
